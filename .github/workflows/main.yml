@@ -9,12 +9,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    env:
+      DOCKER_BUILDKIT: 1
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Enable Docker BuildKit
-        run: echo "DOCKER_BUILDKIT=1" >> /etc/environment
 
       - name: Install dependencies
         run: npm install
